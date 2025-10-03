@@ -1,7 +1,7 @@
 import { compose, type Middleware, type RequestContext, type ResponseContext } from "./middleware";
 import { createTransport } from "./transport";
 import { toAsyncHeadersFactory, toAsyncTokenProvider } from "./auth";
-import type { GraphQLResponse } from "./types/request";
+import type { GraphQLResponse } from "./request.type";
 
 export type ClientOptions = {
   url: string;

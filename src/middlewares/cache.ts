@@ -1,5 +1,5 @@
 import type { Middleware } from "../middleware";
-import type { GraphQLResponse } from "../types/request";
+import type { GraphQLResponse } from "../request.type";
 
 type CacheKeyFn<U = any> = (query: string, variables?: U) => string;
 

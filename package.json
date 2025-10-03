@@ -1,6 +1,6 @@
 {
-    "name": "@theyarnapp/integrations",
-    "version": "0.1.6",
+    "name": "@chokey2nv/yarn-integrations",
+    "version": "0.1.0",
     "description": "The yarn app integrations",
     "keywords": [
         "graphql",

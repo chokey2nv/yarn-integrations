@@ -1,0 +1,45 @@
+{
+    "name": "@theyarnapp/integrations",
+    "version": "0.1.6",
+    "description": "The yarn app integrations",
+    "keywords": [
+        "graphql",
+        "sdk",
+        "typescript",
+        "yarn",
+        "yarn-app",
+        "yarn-app-integrations",
+        "the-yarn-app",
+        "the-yarn-app-online"
+    ],
+    "author": "Agu Chijioke <chokey2nv@gmail.com>",
+    "license": "MIT",
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.esm.js",
+    "react-native": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "tsup src/index.ts --dts --format cjs,esm --out-dir dist",
+        "prepublishOnly": "yarn build",
+        "lint": "eslint src --ext .ts",
+        "test": "vitest run",
+        "test:run": "vitest run --reporter=verbose",
+        "test:watch": "vitest"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@types/node": "^24.5.2",
+        "@vitest/coverage-c8": "^0.33.0",
+        "@vitest/ui": "^3.2.4",
+        "ts-node": "^10.9.2",
+        "tsup": "^6.0.0",
+        "typescript": "^5.9.2",
+        "vitest": "^3.2.4"
+    }
+}

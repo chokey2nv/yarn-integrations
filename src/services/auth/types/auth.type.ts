@@ -1,5 +1,5 @@
 import { IBadge, IUserRaw } from "../../../types";
-import { badgeQuery, IBadgeNestedFields } from "../../user";
+import { badgeQuery, IBadgeFields } from "../../user/user.entities";
 
 export interface IChangePasswordRequest {
   oldPassword: string;
@@ -51,7 +51,7 @@ export type ISignUpResponse = ILoginResponse & {
 export const signUpResponse:(keyof ISignUpResponse)[] = ["accessToken", "userId", "badge"];
 export type ISignUpResultBluePrint = (keyof ISignUpResponse)[];
 export interface ISignUpResponseNestedFields {
-  badge: IBadgeNestedFields;
+  badge: IBadgeFields;
 }
 export const signUpResponseNestedFields:ISignUpResponseNestedFields = {
   badge: badgeQuery

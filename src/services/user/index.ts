@@ -1,4 +1,4 @@
 export * from "./user";
-export * from "./schema";
+export * from "./schemas/user.schema";
 export * from "./service";
 export * from "./types";

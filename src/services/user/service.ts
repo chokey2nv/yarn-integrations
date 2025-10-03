@@ -96,10 +96,10 @@ import {
   IAddUserNotificationSettingRequest,
   IAddUserNotificationSettingResponseBluePrint
 } from "./types";
-import {  schema } from "./schema";
+import {  schema } from "./schemas/user.schema";
 import { gqlQueryStringBuilder } from "@/utils/funcs";
 
-export function useUserService() {
+export function creat() {
   const [me] = useLazyQuery<{ me: IMeResponse }>(
     schema.me(
       gqlQueryStringBuilder<IMeResponse, IMeResponseBluePrint>(

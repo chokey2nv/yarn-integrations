@@ -34,21 +34,6 @@ export const userSchemas = {
       }
     }
   `,
-  getVoucherRedemptionsCount: (query: string) => `
-    query getVoucherRedemptionsCount($userId: String!){
-      getVoucherRedemptionsCount(userId: $userId){
-        ${query}
-      }
-    }
-  `,
-  getEarningAggregate: (query: string) => `
-    query getEarningAggregate($earningAggregate: EarningAggregateInput!){
-      getEarningAggregate(earningAggregate: $earningAggregate){
-        ${query}
-      }
-    }
-  `,
-  
   getFollows: (query: string) => `
       query getFollows($search: String, $followIds: [String], $follow: FollowInput, $limit: Int!, $skip: Int!) {
         getFollows(search: $search, followIds: $followIds, follow: $follow, limit: $limit, skip: $skip) {

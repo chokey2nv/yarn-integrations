@@ -35,5 +35,22 @@ export const badgeSchema = {
       }
     }
   `,
+
+  // earning 
+  getVoucherRedemptionsCount: (query: string) => `
+    query getVoucherRedemptionsCount($userId: String!){
+      getVoucherRedemptionsCount(userId: $userId){
+        ${query}
+      }
+    }
+  `,
+  getEarningAggregate: (query: string) => `
+    query getEarningAggregate($earningAggregate: EarningAggregateInput!){
+      getEarningAggregate(earningAggregate: $earningAggregate){
+        ${query}
+      }
+    }
+  `,
+  
   
 }

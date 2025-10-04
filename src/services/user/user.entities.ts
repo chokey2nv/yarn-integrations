@@ -1,4 +1,4 @@
-import { IBadge, IEarningAggregate, IFollow, IUser, IUserBadge, IUserLite, IUserNotification, IUserNotificationSetting, IUserRank, IUserSuggestion } from "../../types";
+import { IBadge, IEarningAggregate, IFollow, IUser, IUserBadge, IUserLite, IUserNotification, IUserNotificationSetting, IUserRank, IUserSuggestion, IVoucherRedemption } from "../../types";
 
 export type IUserSuggestionFields = (keyof IUserSuggestion)[];
 export const userSuggestionQuery:IUserSuggestionFields = [
@@ -44,4 +44,8 @@ export const userQuery:IUserFields = [
 export type IUserNotificationSettingFields = (keyof IUserNotificationSetting)[]
 export const userNotificationSettingQuery: IUserNotificationSettingFields = [
   "allowedNotifications", "id", "userId",
+]
+export type IVoucherRedemptionFields = (keyof IVoucherRedemption)[]
+export const voucherRedemptionQuery:IVoucherRedemptionFields = [
+    "createdAt", "id", "isRedeemed", "redemptionCode", "userId", "voucherId"
 ]

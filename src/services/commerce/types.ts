@@ -1,4 +1,5 @@
 import { ITransaction, IPaginateRequest, ISearchRequest, IVoucher, IVoucherRedemption, ISubPackage, ISubscription, ITransactionType, ITxSummary } from "@/utils";
+import { IVoucherRedemptionFields, voucherRedemptionQuery } from "../user/user.entities";
 
 
 
@@ -51,11 +52,6 @@ export interface IGetSubPackagesResponseBluePrint {
     subPackages: ISubPackageBluePrint
 }
 
-export type IVoucherRedemptionBluePrint = (keyof IVoucherRedemption)[]
-export const voucherRedemptionQuery:IVoucherRedemptionBluePrint = [
-    "createdAt", "id", "isRedeemed", "redemptionCode", "userId", "voucherId"
-]
-
 
 export interface IGetVoucherRedemptionRequest {
     voucherRedemption: Partial<IVoucherRedemption>
@@ -63,8 +59,12 @@ export interface IGetVoucherRedemptionRequest {
 export interface IGetVoucherRedemptionResponse{
     voucherRedemption: IVoucherRedemption
 }
-export interface IGetVoucherRedemptionResponseBluePrint {
-    voucherRedemption: IVoucherRedemptionBluePrint
+export const getVoucherRedemptionResponse: (keyof IGetVoucherRedemptionResponse)[] = ["voucherRedemption"]
+export interface IGetVoucherRedemptionResponseNestedFields {
+    voucherRedemption: IVoucherRedemptionFields
+}
+export const getVoucherRedemptionResponseNestedFields: IGetVoucherRedemptionResponseNestedFields = {
+    voucherRedemption: voucherRedemptionQuery,
 }
 export interface IGetVoucherRedemptionsRequest extends ISearchRequest, IPaginateRequest {
     voucherRedemption?: Partial<IVoucherRedemption>;
@@ -74,7 +74,7 @@ export interface IGetVoucherRedemptionsResponse {
     voucherRedemptions: IVoucherRedemption[]
 }
 export interface IGetVoucherRedemptionsResponseBluePrint {
-    voucherRedemptions: IVoucherRedemptionBluePrint
+    voucherRedemptions: IVoucherRedemptionFields
 }
 export interface ICreateVoucherRedemptionRequest {
     voucherRedemption: Partial<IVoucherRedemption>
@@ -83,7 +83,7 @@ export interface ICreateVoucherRedemptionResponse {
     voucherRedemption: IVoucherRedemption;
 }
 export interface ICreateVoucherRedemptionResponseBluePrint {
-    voucherRedemption: IVoucherRedemptionBluePrint
+    voucherRedemption: IVoucherRedemptionFields
 }
 
 export type IVoucherBluePrint = (keyof IVoucher)[]

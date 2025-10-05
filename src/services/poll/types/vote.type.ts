@@ -23,11 +23,11 @@ export const getPollVoteResponseNestedFields: IGetPollVoteResponseNestedFields =
 }
 
 // get poll vote count
-export type IGetPollVoteCountRequest = IGetPollVoteRequest
-export interface IGetPollVoteCountResponse {
+export type IGetPollVotesCountRequest = IGetPollVoteRequest
+export interface IGetPollVotesCountResponse {
     count: number;
 }
-export const getPollVoteCountResponse: (keyof IGetPollVoteCountResponse)[] = ["count"];
+export const getPollVotesCountResponse: (keyof IGetPollVotesCountResponse)[] = ["count"];
 
 // get poll votes 
 export interface IGetPollVotesRequest extends ISearchRequest, IPaginateRequest{
